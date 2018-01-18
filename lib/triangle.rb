@@ -7,7 +7,7 @@ class Triangle
     @c = c
     end
   def kind
-    if self.collect{|side| side <= 0} || (a + b <= c) || (b + c <= a ) || (a + c <= b)
+    if self.each{|side| side <= 0} || (a + b <= c) || (b + c <= a ) || (a + c <= b)
       raise TriangleError
     elsif a == b && b == c
       :equilateral
